@@ -1,3 +1,4 @@
+//JPA extiende abstract entity
 package com.example.app.taskmanagement.domain;
 
 import com.example.app.base.domain.AbstractEntity;
@@ -17,7 +18,7 @@ public class Task extends AbstractEntity<Long> {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "task_id")
-    private Long id;
+    private Long id; // se corresponde con task ID
 
     @Column(name = "description", nullable = false, length = DESCRIPTION_MAX_LENGTH)
     @Size(max = DESCRIPTION_MAX_LENGTH)
@@ -28,7 +29,7 @@ public class Task extends AbstractEntity<Long> {
 
     @Column(name = "due_date")
     @Nullable
-    private LocalDate dueDate;
+    private LocalDate dueDate;  //fecha limite cde una tarea que debe terminar
 
     @Override
     public @Nullable Long getId() {

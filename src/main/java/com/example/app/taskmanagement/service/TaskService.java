@@ -1,3 +1,4 @@
+// se corresponde con serviciop 
 package com.example.app.taskmanagement.service;
 
 import com.example.app.taskmanagement.domain.Task;
@@ -12,7 +13,7 @@ import java.time.Clock;
 import java.time.LocalDate;
 import java.util.List;
 
-@Service
+@Service //anotación de servicio
 @Transactional(propagation = Propagation.REQUIRES_NEW)
 public class TaskService {
 
@@ -24,7 +25,7 @@ public class TaskService {
         this.taskRepository = taskRepository;
         this.clock = clock;
     }
-
+//todo lo hace spring boot todo por mi :v
     public void createTask(String description, @Nullable LocalDate dueDate) {
         if ("fail".equals(description)) {
             throw new RuntimeException("This is for testing the error handler");

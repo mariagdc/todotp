@@ -27,7 +27,7 @@ import static com.vaadin.flow.spring.data.VaadinSpringDataHelpers.toSpringPageRe
 @Route("task-list")
 @PageTitle("Task List")
 @Menu(order = 0, icon = "vaadin:clipboard-check", title = "Task List")
-@PermitAll // When security is enabled, allow all authenticated users
+@PermitAll // When security is enabled, allow all authenticated users to access this view
 public class TaskListView extends Main {
 
     private final TaskService taskService;

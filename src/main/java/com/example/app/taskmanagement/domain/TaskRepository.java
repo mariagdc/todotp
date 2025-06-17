@@ -1,3 +1,4 @@
+//representa JPA repository es una interfaz parametrizada con la clase task y el tipo de id
 package com.example.app.taskmanagement.domain;
 
 import org.springframework.data.domain.Pageable;
