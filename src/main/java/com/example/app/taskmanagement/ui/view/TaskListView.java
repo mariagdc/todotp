@@ -41,8 +41,8 @@ public class TaskListView extends Main {
         this.taskService = taskService;
 
         description = new TextField();
-        description.setPlaceholder("What do you want to do?");
-        description.setAriaLabel("Task description");
+        description.setPlaceholder("What do you want to do?");  //Traducirlo Para el tp
+        description.setAriaLabel("Task description"); //Traducirlo Para el tp
         description.setMaxLength(Task.DESCRIPTION_MAX_LENGTH);
         description.setMinWidth("20em");
 
@@ -56,7 +56,7 @@ public class TaskListView extends Main {
         var dateTimeFormatter = DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM).withZone(clock.getZone())
                 .withLocale(getLocale());
         var dateFormatter = DateTimeFormatter.ofLocalizedDate(FormatStyle.MEDIUM).withLocale(getLocale());
-
+//traducirlo Para el tp
         taskGrid = new Grid<>();
         taskGrid.setItems(query -> taskService.list(toSpringPageRequest(query)).stream());
         taskGrid.addColumn(Task::getDescription).setHeader("Description");
@@ -78,7 +78,7 @@ public class TaskListView extends Main {
         taskGrid.getDataProvider().refreshAll();
         description.clear();
         dueDate.clear();
-        Notification.show("Task added", 3000, Notification.Position.BOTTOM_END)
+        Notification.show("Task added", 3000, Notification.Position.BOTTOM_END) //Traducirlo Para el tp
                 .addThemeVariants(NotificationVariant.LUMO_SUCCESS);
     }
 
