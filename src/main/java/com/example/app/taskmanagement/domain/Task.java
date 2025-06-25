@@ -2,7 +2,10 @@
 package com.example.app.taskmanagement.domain;
 
 import com.example.app.base.domain.AbstractEntity;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import org.jspecify.annotations.Nullable;
 
@@ -30,6 +33,15 @@ public class Task extends AbstractEntity<Long> {
     @Column(name = "due_date")
     @Nullable
     private LocalDate dueDate;  //fecha limite cde una tarea que debe terminar
+
+     @Column(name= "done", columnDefinition = "boolean default false")
+    private boolean done ;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "person_id")
+    @NotNull
+    @JsonIgnoreProperties({"person"})
+    private Person person; //se corresponde con persona
+
 
     @Override
     public @Nullable Long getId() {
@@ -59,4 +71,6 @@ public class Task extends AbstractEntity<Long> {
     public void setDueDate(@Nullable LocalDate dueDate) {
         this.dueDate = dueDate;
     }
+   
+
 }
